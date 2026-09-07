@@ -27,4 +27,13 @@ public class PlayerMove : MonoBehaviour
         Vector3 Move = new Vector3(x, y, 0f);
         transform.Translate(Move * movespeed * Time.deltaTime);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Collision Happened"+collision.gameObject.name);
+        if (collision.collider.CompareTag("obstacle"))
+        {
+            Debug.Log("obstacle collission" + collision.gameObject.name);
+        }
+    }
 }
