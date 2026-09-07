@@ -1,17 +1,30 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    [SerializeField] float movespeed = 1f;
+    [SerializeField] float movespeed = 5f;
+    [SerializeField] float rotatespeed = 120f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Debug.Log("Movement script started");
     }
-
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(movespeed * Time.deltaTime, 0f, 0f);
+        if(Input.GetKey(KeyCode.Q))
+        {
+            transform.Rotate(0f, 0f, rotatespeed * Time.deltaTime);
+
+        }
+        if (Input.GetKey(KeyCode.E))
+        {
+            transform.Rotate(0f, 0f, -rotatespeed * Time.deltaTime);
+
+        }
+        float x = Input.GetAxis("Horizontal");
+        float y = Input.GetAxis("Vertical");
+        Vector3 Move = new Vector3(x, y, 0f);
+        transform.Translate(Move * movespeed * Time.deltaTime);
     }
 }
