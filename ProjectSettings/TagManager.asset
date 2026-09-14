@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - obstacle
+  - LLL
+  - Package
+  - Customer
   layers:
   - Default
   - TransparentFX

@@ -5,9 +5,12 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField] float movespeed = 5f;
     [SerializeField] float rotatespeed = 120f;
+    bool iskey = false;
+    SpriteRenderer carRender;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        carRender = GetComponent<SpriteRenderer>();
     }
     // Update is called once per frame
     void Update()
@@ -28,12 +31,11 @@ public class PlayerMove : MonoBehaviour
         transform.Translate(Move * movespeed * Time.deltaTime);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+  
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Collision Happened"+collision.gameObject.name);
-        if (collision.collider.CompareTag("obstacle"))
-        {
-            Debug.Log("obstacle collission" + collision.gameObject.name);
-        }
+        Debug.Log("trigger happened");
+        
     }
 }
