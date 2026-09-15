@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -5,7 +6,7 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField] float movespeed = 5f;
     [SerializeField] float rotatespeed = 120f;
-    bool iskey = false;
+    bool hasPackage = false;
     SpriteRenderer carRender;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -35,7 +36,28 @@ public class PlayerMove : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("trigger happened");
+        if (other.CompareTag("Package"))
+        {
+            if (hasPackage == false)
+            {
+                Debug.Log("Package collected");
+                Destroy(other.gameObject);
+                carRender.color = Color.cyan;
+                hasPackage = true;
+            }
+        }
         
+        if (other.CompareTag("Customer"))
+        {
+            if (hasPackage == true)
+            {
+                Debug.Log("Package Delivered");
+                carRender.color = Color.darkCyan;
+                hasPackage = false;
+            }
+        }
+
+
     }
+
 }

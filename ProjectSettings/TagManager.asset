@@ -8,6 +8,8 @@ TagManager:
   - LLL
   - Package
   - Customer
+  - Package 2
+  - Customer 2
   layers:
   - Default
   - TransparentFX
