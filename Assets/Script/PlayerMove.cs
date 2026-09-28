@@ -6,6 +6,8 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField] float movespeed = 5f;
     [SerializeField] float rotatespeed = 120f;
+    [SerializeField] ParticleSystem TestMyParticle;
+
     bool hasPackage1 = false;
     bool hasPackage2 = false;
 
@@ -16,6 +18,7 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         carRender = GetComponent<SpriteRenderer>();
+        TestMyParticle.Stop();
     }
     // Update is called once per frame
     void Update()
@@ -89,6 +92,7 @@ public class PlayerMove : MonoBehaviour
                 carRender.color = Color.darkCyan;
                 hasPackage2 = false;
                 hasPackage = false;
+                TestMyParticle.Play();
             }
         }
 
