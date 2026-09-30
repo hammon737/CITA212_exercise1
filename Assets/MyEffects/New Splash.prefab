@@ -14775,7 +14775,7 @@ GameObject:
   - component: {fileID: 198341595340134300}
   - component: {fileID: 199556704037818580}
   m_Layer: 0
-  m_Name: BigSplash
+  m_Name: New Splash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

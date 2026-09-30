@@ -5204,7 +5204,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1722726733478836, guid: 4d971b5de487aaf49ae9a06322b08fa2, type: 3}
       propertyPath: m_Name
-      value: BigSplash
+      value: New Splash
       objectReference: {fileID: 0}
     - target: {fileID: 4079391813584830, guid: 4d971b5de487aaf49ae9a06322b08fa2, type: 3}
       propertyPath: m_LocalScale.x
